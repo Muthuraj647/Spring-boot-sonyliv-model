@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/sony_icon.png" type="image/png" >
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/css/signin.css" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="navigation_bar">
+      <div class="nav_icon"><a th:href="home"><img src="/images/sony_icon.png" alt="Icon"></a></div>
+      <div class="nav_tab" id="nav_tab"  >
+          <span class="close"><img src="/images/close.png" alt=""  onclick="closeMenu()"></span>
+          <ul>
+              <li class="temp"></li>
+              <li><a href="#">TV Shows</a></li>
+              <li><a href="#">Originals</a></li>
+              <li><a href="#">Sports</a></li>                    
+              <li><a href="#">Movies</a></li>
+              <li><a href="#">Premium</a></li>
+              <li><a href="#">Games</a></li>
+              <li><a href="signin.html" class="f3">Sign In</a></li>
+          </ul>
+          <a title="Sign in" href="signin.html" class="f1"><img src="/images/Signin.png" alt="signin" ></a>
+          <span class="f2"><a href="signin.html" class="f2">Sign In</a></span>
+          <img src="/images/search_icon.png" alt="search_icon" class="search">
+      </div>
+      <span  class="menubar" id="menubar"><img src="/images/menubar2.png" alt="" onclick="showMenu()"></span>
+  </div>
+    <div class="main-container">
+      <div class="login-box">
+          <h2>SignUp to Continue</h2>
+          <form name="myForm" id="form" th:action="@{/registerUser}" th:object="${user}" method="POST" autocomplete="off">
+            <div class="login">
+            
+            	<div>
+                    <label>Enter your EMP-ID</label>
+                    <input type="text" name="empid" id="empid" maxlength="5" oninput="validate()" class="tbox"  th:field="*{id}"/>
+                    <div class="error" id="empidErr"></div>
+                </div>
+            	
+                <div>
+                    <label>Enter your Name</label>
+                    <input type="text" name="name" id="name" oninput="validate()" class="tbox"  th:field="*{name}"/>
+                    <div class="error" id="nameErr"></div>
+                </div>
+                
+                <div>
+                    <label>Enter your Mobile Number</label>
+                    <input type="text" id="mob" name="mobile" maxlength="10" oninput="validate()" class="tbox" th:field="*{mobileNumber}" />
+                    <div class="error" id="mobileErr"></div>
+                </div>
+                <div>
+                    <label>Enter your Email-Id</label>
+                    <input type="email" name="email" id="email"oninput="validate()" class="tbox"  th:field="*{emailId}"/>
+                    <div class="error" id="emailErr"></div>
+                </div>
+                <div>
+                    <label>Enter your Password</label>
+                    <input type="password" id="password" name="password" oninput="validate()" class="tbox" th:field="*{password}"/>
+                    <div class="error" id="passwordErr"></div>
+                </div>
+                <div>
+                    <input type="submit" id="submitbtn" value="SignUp" disabled class="btn" />
+                    <p>Already have an account? <a th:href="login">click</a> here to SignIn</p>
+                </div>
+            </div>
+          </form>
+      </div>
+    </div>
+    <h2 id="successMsg" style="color: white; text-align: center;"></h2><br>
+    <!-- <div style="overflow-x:auto;">
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>EMP-ID</th>
+            <th>Mobile</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody id="data"></tbody>
+      </table>
+    </div>
+ -->    <br><br>
+    <div class="foot">    
+      <footer >
+          <div class="web">
+          <ul>
+              <li><strong>Explore Shows:</strong> Shows | SAB TV Shows | Marathi TV Shows | Bengali TV Shows | English TV Shows</li>
+              <li><strong>Shows by Genres:</strong> Shows | Comedy Shows | Thriller Shows | Romantic Shows | Reality Shows</li>
+              <li><strong>Movies by Language:</strong> Hindi Movies | English Movies | Marathi Movies</li>
+              <li><strong>Movies by Genre:</strong> Action Movies | Drama Movies | Romantic Movies | Comedy Movies | Horror Movies</li>
+              <li><strong>Channels:</strong>LIVE TV</li>
+              <li><strong>Explore More:</strong>Shows | Movies| Sports | LIVE TV | Premium</li>
+              <li><strong>Follow us on:</strong></li> 
+          </ul>
+          </div>
+          <div class="footmobile">
+              <strong>Terms</strong>
+              <strong>Privacy</strong>
+              <strong>FAQs</strong>
+              <strong>Contact Us</strong>
+          </div>
+
+          <ul class="social">
+            <li><a href="#" class="fa fa-facebook"></a></li>
+            <li><a href="#" class="fa fa-twitter"></a></li>
+            <li><a href="#" class="fa fa-instagram"></a></li>
+            <li><a href="#" class="fa fa-youtube"></a></li>
+        </ul>
+      </footer>
+     
+    </div>
+    <script src="/js/signin.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

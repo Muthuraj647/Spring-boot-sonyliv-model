@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/sony_icon.png" type="image/png" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>SonyLIV - Watch Indian TV Shows, Movies, Sports, Live Cricket ....</title>
+</head>
+<body>
+
+    <div class="doc">
+
+        <div class="navigation_bar">
+
+            <div class="nav_icon"><a th:href="home"><img src="/images/sony_icon.png" alt="Icon"></a></div>
+            
+            <div class="nav_tab" id="nav_tab"  >
+                <span class="close"><img src="/images/close.png" alt=""  onclick="closeMenu()"></span>
+                <ul>
+                    <li class="temp"></li>
+                    <li><a href="#">TV Shows</a></li>
+
+                    <li><a href="#">Originals</a></li>
+
+                    <li><a href="#">Sports</a></li>                    
+                    
+                    <li><a href="#">Movies</a></li>
+
+                    <li><a href="#">Premium</a></li>
+
+                    <li><a href="#">Games</a></li>
+
+                    <li><a href="signin.html" class="f3">Sign In</a></li>
+                    
+                </ul>
+            
+                <a title="Sign in" th:href="login" class="f1"><img src="/images/Signin.png" alt="signin" ></a>
+                <span class="f2"><a href="signin.html" class="f2">Sign In</a></span>
+          
+                <!-- <img src="search_icon.png" alt="search_icon" class="search"> -->
+                <i title="search" class="fa fa-search" id="search"></i>
+            
+            </div>
+            
+            <span  class="menubar" id="menubar"><img src="/images/menubar2.png" alt="" onclick="showMenu()"></span>
+
+        </div>
+        <div class="imgweb"> 
+            <img src="https://i.gadgets360cdn.com/large/sonyliv_new_1590474688532.jpg" alt="background" width="100%">
+        </div>
+    
+
+        
+       
+
+            <!--footer -->
+        <div class="foot">    
+            <footer >
+                <div class="web">
+                <ul>
+                    <li><strong>Explore Shows:</strong> Shows | SAB TV Shows | Marathi TV Shows | Bengali TV Shows | English TV Shows</li>
+                    <li><strong>Shows by Genres:</strong> Shows | Comedy Shows | Thriller Shows | Romantic Shows | Reality Shows</li>
+                    <li><strong>Movies by Language:</strong> Hindi Movies | English Movies | Marathi Movies</li>
+                    <li><strong>Movies by Genre:</strong> Action Movies | Drama Movies | Romantic Movies | Comedy Movies | Horror Movies</li>
+                    <li><strong>Channels:</strong>LIVE TV</li>
+                    <li><strong>Explore More:</strong>Shows | Movies| Sports | LIVE TV | Premium</li>
+                    <li><strong>Follow us on:</strong></li>
+                    
+                </ul>
+                </div>
+                <div class="footmobile">
+                    <strong>Terms</strong>
+                    <strong>Privacy</strong>
+                    <strong>FAQs</strong>
+                    <strong>Contact Us</strong>
+
+                </div>
+                
+                <ul class="social">
+                    <li><a href="#" class="fa fa-facebook"></a></li>
+                    <li><a href="#" class="fa fa-twitter"></a></li>
+                    <li><a href="#" class="fa fa-instagram"></a></li>
+                    <li><a href="#" class="fa fa-youtube"></a></li>
+                </ul>
+            
+
+            </footer>
+           
+        </div>
+
+    </div>
+
+
+   <!--  -->
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+body{
+    font-size: 16px;
+    background: #121212;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+table {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+  }
+  
+th, td {
+    text-align: center;
+    padding: 8px;
+    color: white;
+}
+
+table, td, th {
+    border: 1px solid white;
+}
+  
+.nav_tab ul li .f3, .nav_tab .f2 a{
+    display: none;
+}
+	
+.main-container{
+    display: flex; 
+    justify-content: center;
+}
+
+h2{
+    text-align: center;
+    color: white;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: silver;
+}
+	
+.login-box{
+    border-radius: 4px; 
+    width: 450px; 
+    margin-top: 20px;
+}
+
+input{
+    color: white;
+}
+
+.tbox{
+    width: 97.33%; 
+    height: 45px; 
+    padding-left: 10px; 
+    border-radius: 3px; 
+    border: 1px solid #f1f1f1; 
+    margin-bottom: 10px; 
+    outline: none; font-size: 0.9rem;
+	transition: 0.6s; 
+    background: transparent;
+}
+	 
+
+.login{
+    margin: 15px 20px;
+}
+
+p{
+    color: white;
+    text-align: center;
+}
+
+a{
+    color: yellow;
+}
+
+.btn{
+    border: 1px solid gold; 
+    width: 100%; 
+    padding: 15px 0;
+    margin-bottom: 8px; 
+    border-radius: 4px; 
+	background-color: gold; 
+    color: black; 
+    font-size: 1.2rem; 
+    outline: none; transition: 0.6s;
+    cursor: pointer;
+}
+	
+.error {
+    color: orangered;
+    font-size: 90%;
+}
+	
+.forget-box{
+    text-align: center;
+}
+
+#submitbtn[disabled]{
+    background: gray;
+    border: gray;
+    cursor: auto;
+}
+
+#updatebtn[disabled]{
+    background: gray;
+    border: gray;
+    cursor: auto;
+}
+
+@media screen and (max-width:600px) {
+    .login-box{
+        border-radius: 4px; 
+        width: 250px; 
+        margin-top: 20px;
+    }
+    .search{
+        display: none;
+    }
+
+    
+    .foot footer .social
+    {
+        display: none;
+    }
+    
+}
+
+
+	

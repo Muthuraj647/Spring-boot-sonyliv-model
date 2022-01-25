@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/sony_icon.png" type="image/png" >
+    <title>Edit Movies</title>
+    <link rel="stylesheet" href="/css/signin.css" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="navigation_bar">
+      <div class="nav_icon"><a th:href="home"><img src="/images/sony_icon.png" alt="Icon"></a></div>
+      <div class="nav_tab" id="nav_tab"  >
+          <span class="close"><img src="/images/close.png" alt=""  onclick="closeMenu()"></span>
+          <ul>
+              <li class="temp"></li>
+              <li><a href="#">TV Shows</a></li>
+              <li><a href="#">Originals</a></li>
+              <li><a href="#">Sports</a></li>                    
+              <li><a href="#">Movies</a></li>
+              <li><a href="#">Premium</a></li>
+              <li><a href="#">Games</a></li>
+              <li><a href="signin.html" class="f3">Sign In</a></li>
+          </ul>
+         <!--  <a title="Sign in" href="signin.html" class="f1"><img src="/images/Signin.png" alt="signin" ></a>
+          <span class="f2"><a href="signin.html" class="f2">Sign In</a></span> -->
+           <a th:href="logout" onclick="return confirm('Unsaved changes will be discarded!\n Do you really want to Logout?');" >Logout</a>
+          <img src="/images/search_icon.png" alt="search_icon" class="search">
+      </div>
+      <span  class="menubar" id="menubar"><img src="/images/menubar2.png" alt="" onclick="showMenu()"></span>
+  </div>
+    <div class="main-container">
+      <div class="login-box">
+          <h2>Edit Movie</h2>
+          <form name="myForm" id="form" th:action="@{/updateMovie/{id}(id=${movies.id})}" th:object="${movies}" method="POST" autocomplete="off">
+            <div class="login">
+            
+            	<div style="display:none;">
+                    <label>Your EMP-ID (can't Change)</label>
+                    <input type="text" name="empid" id="empid" maxlength="5" oninput="validate()" class="tbox"  th:field="*{userId}" disabled/>
+                    <div class="error" id="empidErr"></div>
+                </div>
+            	
+                <div>
+                    <label>Edit Movie Name</label>
+                    <input type="text"  class="tbox"  th:field="*{movieName}"/>
+                    
+                </div>
+                
+                <div>
+                    <label>Edit Actor Name</label>
+                    <input type="text" name="name" id="name" oninput="validate()" class="tbox" th:field="*{actorName}" />
+                    <div class="error" id="nameErr"></div>
+                </div>
+                <div>
+                    <label>Edit Language</label>
+                    <input  type="text" name="name" id="name" oninput="validate()" class="tbox"  th:field="*{language}"/>
+                    <div class="error" id="nameErr"></div>
+                </div>
+       
+                <div>
+                    <input type="submit" id="submitbtn" value="Update" class="btn" />
+
+                </div>
+            </div>
+          </form>
+      </div>
+    </div>
+    <h2 id="successMsg" style="color: white; text-align: center;"></h2><br>
+    <!-- <div style="overflow-x:auto;">
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>EMP-ID</th>
+            <th>Mobile</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody id="data"></tbody>
+      </table>
+    </div>
+ -->    <br><br>
+    <div class="foot">    
+      <footer >
+          <div class="web">
+          <ul>
+              <li><strong>Explore Shows:</strong> Shows | SAB TV Shows | Marathi TV Shows | Bengali TV Shows | English TV Shows</li>
+              <li><strong>Shows by Genres:</strong> Shows | Comedy Shows | Thriller Shows | Romantic Shows | Reality Shows</li>
+              <li><strong>Movies by Language:</strong> Hindi Movies | English Movies | Marathi Movies</li>
+              <li><strong>Movies by Genre:</strong> Action Movies | Drama Movies | Romantic Movies | Comedy Movies | Horror Movies</li>
+              <li><strong>Channels:</strong>LIVE TV</li>
+              <li><strong>Explore More:</strong>Shows | Movies| Sports | LIVE TV | Premium</li>
+              <li><strong>Follow us on:</strong></li> 
+          </ul>
+          </div>
+          <div class="footmobile">
+              <strong>Terms</strong>
+              <strong>Privacy</strong>
+              <strong>FAQs</strong>
+              <strong>Contact Us</strong>
+          </div>
+
+          <ul class="social">
+            <li><a href="#" class="fa fa-facebook"></a></li>
+            <li><a href="#" class="fa fa-twitter"></a></li>
+            <li><a href="#" class="fa fa-instagram"></a></li>
+            <li><a href="#" class="fa fa-youtube"></a></li>
+        </ul>
+      </footer>
+     
+    </div>
+   
+    <script src="/js/script.js"></script>
+  </body>
+</html>
